@@ -28,7 +28,5 @@ pnpm-debug.log*
 
 # local personal content and overrides
 /src/config/
-/src/content/
-/src/contents/
 /public/
 /config/
