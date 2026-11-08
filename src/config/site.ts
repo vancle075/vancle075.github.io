@@ -6,11 +6,7 @@ export const locales = {
 		lang: "zh-CN",
 		path: "/",
 	},
-	en: {
-		label: "English",
-		lang: "en",
-		path: "/en/",
-	},
+
 } as const;
 
 export type Locale = keyof typeof locales;
@@ -211,184 +207,11 @@ const siteConfigs = {
 			],
 		},
 	},
-	en: {
-		...shared,
-		title: "vancle's Blog",
-		description: "vancle's personal blog for essays, study notes, and projects.",
-		nav: [
-			{ label: "Home", href: "/" },
-			{ label: "About", href: "/about" },
-			{ label: "Projects", href: "/projects" },
-			{ label: "Blog", href: "/blog" },
-			{ label: "Resume", href: "/resume" },
-			{ label: "Contact", href: "/contact" },
-		],
-		quickLinks: [
-			{ label: "Blog", href: "/blog", icon: "N" },
-			{ label: "Projects", href: "/projects", icon: "P" },
-			{ label: "About", href: "/about", icon: "A" },
-			{ label: "Resume", href: "/resume", icon: "R" },
-			{ label: "Contact", href: "/contact", icon: "@" },
-		],
-		today: {
-			title: "Today",
-			current: "Now: organizing course notes",
-			next: "Next: tweak a small project",
-			note: "Goal: make the README clearer",
-			timeLabel: "My current time",
-			timeZone: "Asia/Shanghai",
-			dateLocale: "en-US",
-			greetings: ["Good late night", "Good early morning", "Good morning", "Good noon", "Good afternoon", "Good evening"],
-		},
-		ui: {
-			projectCta: "View project ->",
-			projectLiveCta: "Visit project",
-			projectRepoCta: "View code",
-			backToList: "Back to list",
-			socialCardCta: "View profile",
-		},
-		home: {
-			eyebrowNote: "A student homepage hub for projects, notes, and things in progress.",
-			headline: "Putting coursework, experiments, and random ideas in one place.",
-			intro: "A student-friendly Astro personal website template: course records, project portfolios, blog notes, and a few things only you find interesting.",
-			primaryCta: { label: "View projects", href: "/projects" },
-		},
-		pages: {
-			home: {
-				title: "Home",
-				description: "A dark-themed Astro personal website template.",
-				modules: [
-					{ type: "homeHero" },
-					
-					
-					
-				],
-			},
-			about: {
-				title: "About",
-				description: "About a student personal website, learning direction, skills, and interests.",
-				modules: [
-					{
-						type: "aboutIntro",
-						props: {
-							kicker: "About",
-							heading: "I am slowly exploring between courses, code, and interest projects.",
-							intro: "This template is suitable for introducing a student learning design, frontend, content creation, or any personal interest direction.",
-							profileLabel: "Profile",
-							profile: "I enjoy turning what I learn into pages, small tools, and notes I can look back on.",
-							paragraphs: [
-								"I care not only about how the page looks, but also how content is organized, how the learning process is preserved, and whether projects can be continued later.",
-								"Here you can write about your major, interests, recent technologies, club experiences, or just some random thoughts about yourself.",
-							],
-						},
-					},
-					
-					
-				],
-			},
-			projects: {
-				title: "Projects / Portfolio",
-				description: "Coursework, small projects, portfolio pieces, and experiment records.",
-				modules: [
-					{
-						type: "PROJECTGRID_SKIP",
-						props: {
-							kicker: "Portfolio",
-							title: "Projects / Portfolio",
-							description: "Showcasing coursework, personal projects, and experiment records.",
-							columns: 2,
-							largePadding: true,
-						},
-					},
-				],
-			},
-			blog: {
-				title: "Blog / Notes",
-				description: "Notes about coursework, frontend, design, life, and long-term learning.",
-				modules: [
-					{
-						type: "blogIndex",
-						props: {
-							kicker: "Notes",
-							title: "Blog / Notes",
-							description: "Write learning logs, project reviews, class notes, and daily observations in Markdown. Drafts are hidden from lists automatically.",
-							labels: {
-								search: "Search title, summary, or tags",
-								all: "All",
-								empty: "No notes match the current filters.",
-							},
-						},
-					},
-				],
-			},
-			resume: {
-				title: "Resume / Experience",
-				description: "Student experience, skills, projects, and learning records.",
-				profileLabel: "Profile",
-				emailLabel: "Email",
-				linksLabel: "Links",
-				skillsLabel: "Skills",
-				highlightsLabel: "Highlights",
-				modules: [
-					{
-						type: "resume",
-						props: {
-							kicker: "Resume",
-							title: "Resume / Experience",
-							description: "Use this page for education, club experience, projects, skills, and resume files. The current content comes from src/config/site.ts.",
-						},
-					},
-				],
-			},
-			contact: {
-				title: "Contact",
-				description: "Contact the author of this personal website.",
-				modules: [
-					{
-						type: "contactCards",
-						props: {
-							kicker: "Contact",
-							heading: "Send a note about projects, writing, or personal websites.",
-							intro: "Add your email, GitHub, Bilibili, Telegram, or any public contact link here.",
-						},
-					},
-				],
-			},
-		},		skills: [],
-		resume: {
-			summary: "A template resume area for education, skills, projects, highlights, and downloadable resume files.",
-			details: [
-				{ label: "Location", value: "Campus / Online" },
-				{ label: "Focus", value: "Design Engineering / Frontend / Content" },
-			],
-			links: [
-				{ label: "Projects", href: "/projects" },
-				{ label: "Notes", href: "/blog" },
-				{ label: "Contact", href: "/contact" },
-			],
-			files: [],
-			highlights: ["Add awards, competitions, or course highlights here", "Add open-source contributions or club experience here"],
-			sections: [
-				{
-					title: "Experience",
-					items: [
-						{
-							period: "2025 - Now",
-							title: "Job Title / Role",
-							org: "Company / Organization",
-							description: "Describe your experience here.",
-							points: ["Highlight 1", "Highlight 2"],
-							link: [],
-						},
-					],
-				},
-			],
-		},
-	},
+
 } as const;
 
 export function isLocale(locale: string | undefined): locale is Locale {
-	return locale === "zh" || locale === "en";
+	return locale === "zh";
 }
 
 export function getLocaleFromUrl(url: URL): Locale {
