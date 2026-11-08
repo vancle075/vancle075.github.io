@@ -280,19 +280,7 @@ const siteConfigs = {
 							],
 						},
 					},
-					{
-						type: "gameList",
-						props: {
-							title: "What can go on the homepage",
-							description: "These modules can all be replaced with your own sections in src/config/site.ts.",
-							items: [
-								{ label: "Study Records", description: "Record courses, reading, experiments, and periodic reviews." },
-								{ label: "Project Portfolio", description: "Showcase coursework, open-source projects, and personal practice." },
-								{ label: "Blog Notes", description: "Capture ideas in Markdown, with support for tags and wiki links." },
-								{ label: "Resume Experience", description: "Education background, skills, project experience, and downloadable PDF resume." },
-							],
-						},
-					},
+					
 					
 				],
 			},
