@@ -104,7 +104,9 @@ const siteConfigs = {
 							kicker: "About",
 							heading: "whuscse2026级",
 							profileLabel: "Profile",
-							profile: "intp","我爱玩蛋仔派对","节奏吉他手.."
+							profile: `intp
+我爱玩蛋仔派对
+节奏吉他手`,
 							paragraphs: [
 								"国家网络安全学院计算机类",
 								"网安院学习部技术组",
