@@ -28,12 +28,6 @@ const isActive = (href: string) => {
 				</a>
 			))}
 		</div>
-		<a
-			href={localizePath(otherLocale, currentPath)}
-			class="hidden rounded-full px-3 py-2 text-sm text-zinc-400 transition hover:bg-white/10 hover:text-white md:block"
-		>
-			{locales[otherLocale].label}
-		</a>
 	</nav>
 	<div class="flex gap-1 overflow-x-auto px-5 pb-3 md:hidden">
 		{siteConfig.nav.map((item) => (
@@ -41,8 +35,5 @@ const isActive = (href: string) => {
 				{item.label}
 			</a>
 		))}
-		<a href={localizePath(otherLocale, currentPath)} class="shrink-0 rounded-full bg-white/5 px-3 py-1.5 text-sm text-zinc-300">
-			{locales[otherLocale].label}
-		</a>
 	</div>
 </header>
