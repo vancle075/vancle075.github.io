@@ -77,7 +77,6 @@ const siteConfigs = {
 		},
 		home: {
 			eyebrowNote: "whu·国家网络安全学院·2026",
-			headline: "把上课、折腾和突然冒出的想法都放在这里。",
 			primaryCta: { label: "看看项目", href: "/projects" },
 		},
 		pages: {
@@ -187,8 +186,8 @@ const siteConfigs = {
 				{ label: "Location", value: "Campus / Online" },
 				{ label: "Focus", value: "Design Engineering / Frontend / Content" },
 			],
-			links: [],
-			files: [],
+			links: [],//项目链接
+			files: [],//项目文件
 			highlights: ["", ""],
 			sections: [
 				{
@@ -196,10 +195,19 @@ const siteConfigs = {
 					items: [
 						{
 							period: "2026 - Now",
-							title: "网安院学习部技术组",
+							title: "网安院学习部",
+							org: "",
+							description: "",
+							points: ["技术组"],//亮点写这里
+							link: [],
+						},
+
+						{
 							period: "2026 - Now",
 							title: "2604班组织委员",
-							points: ["", ""],//亮点写这里
+							org: "",
+							description: "",
+							points: [],
 							link: [],
 						},
 					],
