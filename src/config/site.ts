@@ -182,10 +182,7 @@ const siteConfigs = {
 		},		skills: [],
 		resume: {
 			summary: "",
-			details: [
-				{ label: "Location", value: "Campus / Online" },
-				{ label: "Focus", value: "Design Engineering / Frontend / Content" },
-			],
+			details: [],
 			links: [],//项目链接
 			files: [],//项目文件
 			highlights: ["", ""],
