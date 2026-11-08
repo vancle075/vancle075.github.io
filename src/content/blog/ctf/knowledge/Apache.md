@@ -28,57 +28,58 @@ Apache的一大特色，是Apache的局部小配置文件
 （注意文件名开头有个点 .htaccess，Linux 下开头带点的文件是隐藏文件，ls 默认看不到，要 ls -a）
 
 ## 指令：
-SetHandler application/x-httpd-php
-当前目录所有文件，全部交给 php 解析（jpg 也能当 php 跑！）
-AddType application/x-httpd-php .xxx
-自定义后缀当做 php 解析，比如 .jpg .txt	
-AddHandler php8-script .abc
-绑定后缀到 php 处理器，另一种绕过写法
-php_flag engine on/off
-开关 php 解析引擎
+SetHandler application/x-httpd-php  
+当前目录所有文件，全部交给 php 解析（jpg 也能当 php 跑！）  
+AddType application/x-httpd-php .xxx  
+自定义后缀当做 php 解析，比如 .jpg .txt	  
+AddHandler php8-script .abc  
+绑定后缀到 php 处理器，另一种绕过写法  
+php_flag engine on/off  
+开关 php 解析引擎  
 至于.heaccess是否能生效，则要看AllowOverride：none=不检查不读取;all/fileinfo/authconfig/indexes=读取但放行规则不一样
 
 # 常见语法：
 
 ## 1.容器块（包裹一组规则）
-<VirtualHost *:80> ... </VirtualHost>
-    虚拟主机块，绑定端口+域名，一个站点一套配置
-<Directory "/path"> ... </Directory>
-专门用来给【文件夹（目录）】单独设置规则。匹配服务器硬盘上的文件夹
-<Location /urlpath> ... </Location>
-针对访问 URL 路径设置规则，不是本地文件路径。匹配用户浏览器输入的url
-<FilesMatch "\.php$"> ... </FilesMatch>
-正则匹配文件名，对特定后缀文件控制权限
-<Files "test.txt"> ... </Files>
-精准匹配单个文件名
+<VirtualHost *:80> ... </VirtualHost>  
+    虚拟主机块，绑定端口+域名，一个站点一套配置  
+<Directory "/path"> ... </Directory>  
+    专门用来给【文件夹（目录）】单独设置规则。匹配服务器硬盘上的文件夹  
+<Location /urlpath> ... </Location>  
+    针对访问 URL 路径设置规则，不是本地文件路径。匹配用户浏览器输入的url  
+<FilesMatch "\.php$"> ... </FilesMatch>  
+    正则匹配文件名，对特定后缀文件控制权限  
+<Files "test.txt"> ... </Files>  
+    精准匹配单个文件名
 
 ## 2.目录 & 首页相关
-Options Indexes
-开启目录浏览（没有 index 文件时列出全部文件）
-如果访问一个目录（比如 `whuctf2025.com/test/`），这个目录里**没有 index.html/index.php 这种默认首页文件，Apache 就直接把这个文件夹里所有文件列出来给浏览器看（目录浏览）。indexes只有在完全没有首页文件(index.html/index.php)时才会生效显示目录列表
-Options -Indexes
-关闭目录浏览（默认很多靶场关）
-DirectoryIndex index.html index.php
-访问目录时，自动找首页文件.当我访问一个文件夹（目录）的时候，优先自动去找哪一个文件当做首页返回给浏览器
-AllowOverride All / None
-是否允许目录下 .htaccess 覆盖配置
-Options FollowSymLinks
-    允许 Apache 跟随软链接（符号链接）。简单说：如果目录里有个软链接文件指向别的地方，访问这个链接时 Apache 会去读目标文件。
-访问控制
-Require all granted
-    允许所有人访问
-Require all denied
-    全部拒绝访问
-Require ip 127.0.0.1
-只允许指定ip访问
-虚拟主机配套指令（写vhost必带）
-ServerName xxxx.com
-这个虚拟主机对应的域名
-ServerAlias www.xxxx.com
-域名别名，多个域名绑定同一个站点
-DocumentRoot /xxx/xxx/xxx
-网站根目录（磁盘路径）
-ErrorLog /xxx/error.log
-错误日志路径
-CustomLog /xxx/access.log
-访问日志
+Options Indexes  
+开启目录浏览（没有 index 文件时列出全部文件）  
+如果访问一个目录（比如 `whuctf2025.com/test/`），这个目录里**没有 index.html/index.php 这种默认首页文件，Apache 就直接把这个文件夹里所有文件列出来给浏览器看（目录浏览）。indexes只有在完全没有首页文件(index.html/index.php)时才会生效显示目录列表  
+Options -Indexes  
+关闭目录浏览（默认很多靶场关）  
+DirectoryIndex index.html index.php  
+访问目录时，自动找首页文件.当我访问一个文件夹（目录）的时候，优先自动去找哪一个文件当做首页返回给浏览器  
+AllowOverride All / None  
+是否允许目录下 .htaccess 覆盖配置  
+Options FollowSymLinks  
+    允许 Apache 跟随软链接（符号链接）。简单说：如果目录里有个软链接文件指向别的地方，访问这个链接时 Apache 会去读目标文件。  
+
+## 3.访问控制  
+Require all granted  
+    允许所有人访问  
+Require all denied  
+    全部拒绝访问  
+Require ip 127.0.0.1  
+    只允许指定ip访问  
+    虚拟主机配套指令（写vhost必带）  
+ServerName xxxx.com  
+    这个虚拟主机对应的域名  
+ServerAlias www.xxxx.com  
+    域名别名，多个域名绑定同一个站点  
+DocumentRoot /xxx/xxx/xxx  
+    网站根目录（磁盘路径）  
+ErrorLog /xxx/error.log  
+    错误日志路径  
+CustomLog /xxx/access.log  
+    访问日志  
