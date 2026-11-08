@@ -46,7 +46,7 @@ const siteConfigs = {
 	zh: {
 		...shared,
 		title: "vancle 的个人博客",
-		description: "vancle 的个人博客，记录随笔、学习和项目。",
+		description: "欢迎来到vancle 的个人博客",
 		nav: [
 			{ label: "首页", href: "/" },
 			{ label: "关于我", href: "/about" },
@@ -64,9 +64,9 @@ const siteConfigs = {
 		],
 		today: {
 			title: "今日小状态",
-			current: "正在：整理课程笔记",
-			next: "稍后：改一个小项目",
-			note: "今日目标：把 README 写明白",
+			current: "正在：恶补程设",
+			next: "稍后：恶补程设",
+			note: "今日目标：把程设作业写完",
 			timeLabel: "我的当前时间",
 			timeZone: "Asia/Shanghai",
 			dateLocale: "zh-CN",
@@ -80,9 +80,8 @@ const siteConfigs = {
 			socialCardCta: "查看主页",
 		},
 		home: {
-			eyebrowNote: "一个学生的主页入口，放作品、笔记和正在折腾的东西。",
+			eyebrowNote: "whu·国家网络安全学院·2026",
 			headline: "把上课、折腾和突然冒出的想法都放在这里。",
-			intro: "这是一个更适合学生使用的 Astro 个人主页模板：可以放课程记录、项目作品、博客笔记，也可以塞一点只有自己觉得好玩的入口。",
 			primaryCta: { label: "看看项目", href: "/projects" },
 		},
 		pages: {
@@ -98,36 +97,24 @@ const siteConfigs = {
 			},
 			about: {
 				title: "关于我",
-				description: "关于学生个人主页、学习方向、技能和兴趣的介绍。",
 				modules: [
 					{
 						type: "aboutIntro",
 						props: {
 							kicker: "About",
-							heading: "我在课程、代码和兴趣项目之间慢慢探索。",
-							intro: "这个模板适合介绍一个正在学习设计、前端、内容创作或任何个人兴趣方向的学生。",
+							heading: "whuscse2026级",
 							profileLabel: "Profile",
-							profile: "喜欢把学到的东西做成页面、小工具和可以回头看的笔记。",
+							profile: "intp",
 							paragraphs: [
-								"我关心的不只是页面长什么样，也包括内容怎么组织、学习过程怎么留下来、项目以后还能不能继续改。",
-								"这里可以写你的专业、兴趣、最近在学的技术、社团经历，或者只是放一些关于自己的碎碎念。",
+								"国家网络安全学院计算机类",
+								"网安院学习部技术组",
+								"网安院ctf俱乐部",
+								"网安院器乐社",
+								"武汉大学青鸟吉他协会",
+								"网安院2604团支委"
 							],
 						},
 					},
-					{
-						type: "gameList",
-						props: {
-							title: "主页可以放什么",
-							description: "这些模块都可以在 src/config/site.ts 里替换成自己的栏目。",
-							items: [
-								{ label: "学习记录", description: "记录课程、阅读、实验和阶段性复盘。" },
-								{ label: "项目作品", description: "展示课程作业、开源项目和个人练手。" },
-								{ label: "博客笔记", description: "用 Markdown 把想法留下来，支持标签和双链。" },
-								{ label: "简历经历", description: "教育背景、技能、项目经验和可下载的 PDF 简历。" },
-							],
-						},
-					},
-					
 				],
 			},
 			projects: {
@@ -139,7 +126,7 @@ const siteConfigs = {
 						props: {
 							kicker: "Portfolio",
 							title: "项目 / 作品集",
-							description: "这里展示课程作业、个人项目和实验记录。",
+							description: "课程作业、个人项目和实验记录。",
 							columns: 2,
 							largePadding: true,
 						},
@@ -155,7 +142,6 @@ const siteConfigs = {
 						props: {
 							kicker: "Notes",
 							title: "博客 / 笔记",
-							description: "用 Markdown 记录学习过程、项目复盘、课堂笔记和日常观察。草稿文章会在列表中自动过滤。",
 							labels: {
 								search: "搜索标题、摘要或标签",
 								all: "全部",
@@ -179,7 +165,6 @@ const siteConfigs = {
 						props: {
 							kicker: "Resume",
 							title: "简历 / 经历",
-							description: "此页面展示教育经历、项目经验、技能和可下载的简历文件。当前内容来自 src/config/site.ts。",
 						},
 					},
 				],
@@ -193,35 +178,30 @@ const siteConfigs = {
 						props: {
 							kicker: "Contact",
 							heading: "关于项目、写作或个人网站的想法，欢迎来信。",
-							intro: "把你的 Email、GitHub、Bilibili、Telegram 或其他公开链接放在这里。",
 						},
 					},
 				],
 			},
 		},		skills: [],
 		resume: {
-			summary: "一个模板简历区域，用于展示教育、技能、项目亮点和可下载的简历文件。",
+			summary: "",
 			details: [
 				{ label: "Location", value: "Campus / Online" },
 				{ label: "Focus", value: "Design Engineering / Frontend / Content" },
 			],
-			links: [
-				{ label: "Projects", href: "/projects" },
-				{ label: "Notes", href: "/blog" },
-				{ label: "Contact", href: "/contact" },
-			],
+			links: [],
 			files: [],
-			highlights: ["Add awards, competitions, or course highlights here", "Add open-source contributions or club experience here"],
+			highlights: ["", ""],
 			sections: [
 				{
 					title: "Experience",
 					items: [
 						{
-							period: "2025 - Now",
-							title: "职位 / 角色",
-							org: "公司 / 组织",
-							description: "在这里写这段经历的描述。",
-							points: ["亮点 1", "亮点 2"],
+							period: "2026 - Now",
+							title: "网安院学习部技术组",
+							period: "2026 - Now",
+							title: "2604班组织委员",
+							points: ["", ""],//亮点写这里
 							link: [],
 						},
 					],
